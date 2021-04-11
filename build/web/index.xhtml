@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Index</title>
+        <h:outputStylesheet library="css" name="dizajn.css"/>
+    </h:head>
+    <h:body class="poglavlje" >
+        
+        <h:form>
+            
+            <p:panelGrid columns="2">
+            <p:panelGrid>
+                <p:row class="tabela-unutra-neparni">
+                <p:column colspan="1"> Username:</p:column>   
+                <p:column colspan="1"> <h:inputText value="#{login.username}"></h:inputText></p:column> 
+                </p:row>
+                <p:row class="tabela-unutra-neparni">
+                <p:column colspan="1">Password: </p:column>
+                <p:column colspan="1"><h:inputSecret value="#{login.password}"></h:inputSecret></p:column>
+                </p:row>
+                <p:row>
+                <p:column colspan="2">
+                    <p:commandButton value="LOGIN" action="#{login.login()}" ajax="false"></p:commandButton>
+                </p:column>
+                </p:row>
+                <p:row>
+                <p:column colspan="2">
+                    <p:commandButton value="GOST" action="#{login.ispis()}"></p:commandButton>
+                </p:column>
+                </p:row>
+            </p:panelGrid>
+                <p:graphicImage library="image" name="proba.jpg" width="900" height="150"/>
+            </p:panelGrid>
+            
+        </h:form>
+        
+        
+        <br></br>
+        <br></br>
+        
+        <h:form>
+        
+            <p:panelGrid>
+            <p:row>
+            <p:column rowspan="2" class="reg">
+            <p:panelGrid columns="2" >
+            Username: <p:inputText value="#{registracija.tak.username}"
+                                   required="true"
+                                   requiredMessage="Obavezno polje za username!"
+                                   ></p:inputText><br/>
+            Password: <p:password  value="#{registracija.tak.password}" id="password"
+                                    validatorMessage="Nije ispunjeno pravilo za lozinku!">
+                <f:validateRegex pattern="^(?=.{8,12}$)(?!.*(\S)\1{2})(?=.*[A-Z])(?=.*[a-z]{3})(?=.*\d)(?=.*[^a-zA-Z0-9])([a-zA-Z]\S*)$"/>
+            </p:password><br/>
+            Potvrda: <p:inputText value="#{registracija.regpot}"></p:inputText><br/>
+            Ime: <p:inputText value="#{registracija.tak.ime}"></p:inputText><br/>
+            Prezime: <p:inputText value="#{registracija.tak.prezime}"></p:inputText><br/>
+            Email: <p:inputText value="#{registracija.tak.email}"
+                               validatorMessage="Nije ispunjeno pravilo za email!" 
+                               >
+                <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
+            </p:inputText><br/>
+            Zanimanje: <p:inputText value="#{registracija.tak.zanimanje}"></p:inputText><br/>
+            Pol: <p:selectOneMenu value="#{registracija.tak.pol}">
+                <f:selectItem itemValue="m" itemLabel="Muskarac"></f:selectItem>
+                <f:selectItem itemValue="z" itemLabel="Zena"></f:selectItem>
+            </p:selectOneMenu><br/>
+            
+            JMBG: <p:inputText value="#{registracija.tak.jmbg}"
+                               validatorMessage="Nije ispunjeno pravilo za jmbg!">
+                    <f:validateRegex pattern="^(0[1-9]|[12][0-9]|3[01])(0[1-9]|1[012])[0-9]{9}"/>
+            </p:inputText><br/>
+            Pitanje: <p:inputText value="#{registracija.tak.pitanje}"></p:inputText><br/>
+            Odgovor: <p:inputText value="#{registracija.tak.odgovor}"></p:inputText><br/>
+            Slika: <p:fileUpload value="#{registracija.f}" mode="simple" /><br/>
+            <p:commandButton value="REGISTRUJ SE" action="#{registracija.registrovanje()}" ajax="false"></p:commandButton>
+            </p:panelGrid>
+            </p:column>
+                
+            <p:column class="reg">
+            
+                
+            <p:panelGrid columns="2">    
+            <p:outputLabel>PROMENA LOZINKE:</p:outputLabel>
+            <p:outputLabel></p:outputLabel>
+            Username: <p:inputText value="#{play.username}"></p:inputText><br/>
+            Stara sifra: <p:inputText value="#{play.password}"></p:inputText><br/>
+            Nova sifra: <p:inputText value="#{play.novi}"></p:inputText><br/>
+            Potvrda: <p:inputText value="#{play.potvrda}"></p:inputText><br/>
+            <p:commandButton value="POTVRDI ODGOVOR" action="#{play.promena()}" ></p:commandButton>
+            </p:panelGrid>
+                    
+                <br></br>  
+            
+                
+            <p:panelGrid columns="2">
+            <p:outputLabel>ZABORAVIO SI SIFRU?:</p:outputLabel>
+            <p:outputLabel></p:outputLabel>
+            Username: <p:inputText value="#{registracija.user}"></p:inputText><br/>
+            JMBG: <p:inputText value="#{registracija.jmbg}"></p:inputText><br/>
+            <p:commandButton value="POTVRDI" action="#{registracija.jmbgs()}"></p:commandButton>
+            </p:panelGrid>
+                
+                <br></br>
+                
+            
+                
+                <h:messages style="color: red; font-weight: bold"/>
+                <br></br>
+                <p:outputLabel value="#{login.poruka}" style="color: red; font-weight: bold"></p:outputLabel>
+                <br></br>
+                <p:outputLabel value="#{registracija.is}" style="color: red; font-weight: bold"></p:outputLabel>
+            </p:column>
+                
+                
+            </p:row>
+               
+            </p:panelGrid>   
+            
+            
+        </h:form> 
+        
+        
+    </h:body>
+</html>

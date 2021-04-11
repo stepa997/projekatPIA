@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Anagram</title>
+    </h:head>
+    <h:body style="background-color: burlywood">
+        <h:form>
+            <div align="center" style="font-family: cursive; font-size: x-large">Pitanje:</div>
+            <br></br>
+            <div align="center" style="font-family:fantasy ">
+                #{reci.pitanje} ?
+            </div>
+            <br></br>
+            
+            <div align="center" style="font-style: italic">Resenje:</div>
+             
+            <div align="center">
+                <h:inputText value="#{anagram.odgovor}" size="32" ></h:inputText><br/>
+            </div>
+            
+            <br></br>
+            <div align="center">
+            <p:commandButton value="POTVRDI ODGOVOR" action="#{anagram.kreni()}"
+                             style="color: blueviolet"></p:commandButton>
+            </div>
+            <div align="center">
+                <h:outputText id="txt_count" value="#{anagram.number}" style="font-size: xx-large; color:red"  />
+            </div>
+            <p:poll interval="1" listener="#{anagram.increment()}" update="txt_count" /> 
+            </h:form>
+
+    </h:body>
+</html>
+

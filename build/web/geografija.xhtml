@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Geografija</title>
+        <h:outputStylesheet library="css" name="dizajn.css"/>
+    </h:head>
+    <h:body style="background-color: beige">
+        <h:form>
+            <div align="center">
+            <p:panelGrid columns="2" class="tabela">
+            Slovo: <p:outputLabel value="#{geografija.slovo}"></p:outputLabel><br/>
+            Drzava: <p:inputText value="#{geografija.pojam.drzava}"></p:inputText><br/>
+            Grad: <p:inputText value="#{geografija.pojam.grad}"></p:inputText><br/>
+            Jezero: <p:inputText value="#{geografija.pojam.jezero}"></p:inputText><br/>
+            Planina: <p:inputText value="#{geografija.pojam.planina}"></p:inputText><br/>
+            Reka: <p:inputText value="#{geografija.pojam.reka}"></p:inputText><br/>
+            Zivotinja: <p:inputText value="#{geografija.pojam.zivotinja}"></p:inputText><br/>
+            Biljka: <p:inputText value="#{geografija.pojam.biljka}"></p:inputText><br/>
+            Muzicka grupa: <p:inputText value="#{geografija.pojam.grupa}"></p:inputText><br/>
+            
+            
+           
+            <p:commandButton value="POTVRDI" action="#{geografija.radi()}"></p:commandButton>
+            
+            </p:panelGrid>
+            </div>
+            <div align="center" style="color: red; font-size: xx-large">
+            <h:outputText id="txt_count" value="#{anagram.number}" />
+            </div>
+            <p:poll interval="1" listener="#{anagram.increment()}" update="txt_count" />
+        </h:form>
+    </h:body>
+</html>
+

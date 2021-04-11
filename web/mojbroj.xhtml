@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color: blanchedalmond">
+        <h:form id="forma">
+            <div align="center">    
+        <p:commandButton id="txt_count0" value="#{mojBroj.nums[0]}" action="#{mojBroj.dodaj(mojBroj.nums[0])}" update="forma" disabled="#{mojBroj.b or mojBroj.br[0]}"
+                         style="color: blueviolet"/>
+        <p:commandButton id="txt_count1" value="#{mojBroj.nums[1]}" action="#{mojBroj.dodaj(mojBroj.nums[1])}" update="forma" disabled="#{mojBroj.b or mojBroj.br[1]}"
+                         style="color: blueviolet"/>
+        <p:commandButton id="txt_count2" value="#{mojBroj.nums[2]}" action="#{mojBroj.dodaj(mojBroj.nums[2])}" update="forma" disabled="#{mojBroj.b or mojBroj.br[2]}"
+                         style="color: blueviolet"/>
+        <p:commandButton id="txt_count3" value="#{mojBroj.nums[3]}" action="#{mojBroj.dodaj(mojBroj.nums[3])}" update="forma" disabled="#{mojBroj.b or mojBroj.br[3]}"
+                         style="color: blueviolet"/>
+        <br></br>
+        <p:commandButton id="txt_count4" value="#{mojBroj.nums[4]}" action="#{mojBroj.dodaj(mojBroj.nums[4])}" update="forma" disabled="#{mojBroj.b or mojBroj.br[4]}"
+                         style="color: blueviolet"/>
+        <br></br>
+        <p:commandButton id="txt_count5" value="#{mojBroj.nums[5]}" action="#{mojBroj.dodaj(mojBroj.nums[5])}" update="forma" disabled="#{mojBroj.b or mojBroj.br[5]}"
+                         style="color: blueviolet"/>
+            </div>
+        <br></br>
+        <br></br>
+        <div align="center" style="font-size: xx-large">
+        <p:outputLabel id="txt_count6" value="#{mojBroj.nums[6]}" />
+        </div>
+        <br></br>
+        <div align="center">
+        <h:inputText value="#{mojBroj.rezulat}"></h:inputText><br/>
+        </div>
+        <br></br>
+        
+        <div align="center">
+        <p:commandButton id="plus" value="+"  update="forma" action="#{mojBroj.dodajs('+')}" disabled="#{mojBroj.z}"/>
+        <p:commandButton id="minus" value="-"  update="forma" action="#{mojBroj.dodajs('-')}" disabled="#{mojBroj.z}"/>
+        <p:commandButton id="puta" value="*"  update="forma" action="#{mojBroj.dodajs('*')}" disabled="#{mojBroj.z}"/>
+        <p:commandButton id="podeljeno" value="/"  update="forma" action="#{mojBroj.dodajs('/')}" disabled="#{mojBroj.z}"/>
+        <p:commandButton id="otvorena" value="("  update="forma" action="#{mojBroj.dodajs('(')}" disabled="#{mojBroj.b}"/>
+        <p:commandButton id="zatvorena" value=")"  update="forma" action="#{mojBroj.dodajs(')')}" disabled="#{mojBroj.zatvori}"/>
+        </div>
+        <div align="center">
+        <p:commandButton value="STOP" action="#{mojBroj.increment()}" 
+                         update="forma" style="color: red"></p:commandButton>
+        </div>
+        <div align="center" style="font-size: xx-large; color: red;">
+        <h:outputText id="txt_count" value="#{anagram.number}" />
+        </div>
+        <!--<p:poll interval="1" listener="#{anagram.increment()}" update="txt_count" />-->
+        <br></br>
+        <div align="center">
+        <p:commandButton value="RACUNAJ" action="#{mojBroj.racun()}" disabled="#{mojBroj.z}"
+                         style="color: blue"></p:commandButton>
+        </div>
+        </h:form>
+    </h:body>
+</html>
+

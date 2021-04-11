@@ -1,0 +1,43 @@
+/* 
+    Created on : 20-Nov-2018, 00:08:35
+    Author     : Drazen
+*/
+.crveniFont{
+    font-size: 1.2em;
+    font-family: Verdana;
+    color: red;
+}
+
+.tabela{
+    padding: 5px;
+    border-width: 3px;
+    border-style: dashed;
+    border-color: red;
+}
+.tabela-unutra-neparni, .tabela-unutra-parni{
+    border-width: 3px;
+    text-align: center;
+    color: blue;
+    background-color: blanchedalmond;
+}
+.tabela-unutra-parni{
+    background-color: cyan;
+}
+
+.zaglavlje{
+    text-align: center;
+    background-color: yellow;
+}
+
+.poglavlje {
+    text-align: center;
+    background-color: brown;
+    
+}
+
+.reg{
+    border-width: 3px;
+    text-align: center;
+    color: blue;
+    background-color: blanchedalmond;
+}

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color: bisque">
+        <h:form id="formas">
+            <div style="color: blue">Drzava:</div> 
+        <p:outputLabel id="drzava" value="#{geografija.ispis.drzava}"></p:outputLabel>
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiDrz()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbDrz()}"></p:commandButton>
+            
+        <br></br>
+        <div style="color: blue">Grad:</div> 
+        <h:outputText id="grad" value="#{geografija.ispis.grad}"  />
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiGrad()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbGrad()}"></p:commandButton>
+        <br></br>
+        <div style="color: blue">Jezero:</div> 
+        <h:outputText id="jezero" value="#{geografija.ispis.jezero}"/>
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiJez()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbJez()}"></p:commandButton>
+        <br></br>
+        <div style="color: blue">Planina:</div> 
+        <h:outputText id="planina" value="#{geografija.ispis.planina}"  />
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiPlan()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbPlan()}"></p:commandButton>
+        <br></br>
+        <div style="color: blue">Reka:</div> 
+        <h:outputText id="reka" value="#{geografija.ispis.reka}"  />
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiReka()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbReka()}"></p:commandButton>
+        <br></br>
+        <div style="color: blue">Zivotinja:</div> 
+        <h:outputText id="zivotinja" value="#{geografija.ispis.zivotinja}"/>
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiZiv()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbZiv()}"></p:commandButton>
+        <br></br>
+        <div style="color: blue">Biljka:</div> 
+        <h:outputText id="biljka" value="#{geografija.ispis.biljka}"  />
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiBi()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbBi()}"></p:commandButton>
+        <br></br>
+        <div style="color: blue">Grupa:</div> 
+        <h:outputText id="grupa" value="#{geografija.ispis.grupa}"/>
+        <p:commandButton value="POTVDRI" action="#{geografija.potvrdiGru()}" ></p:commandButton>
+        <p:commandButton value="ODBIJ" action="#{geografija.odbGru()}"></p:commandButton>
+        <br></br>
+        
+        
+        <p:poll interval="1" listener="#{geografija.sup()}" update="formas" />
+        </h:form>
+        
+        <h:form>
+            <div style="color: brown">
+            ANAGRAM IGRA:
+            </div>
+            <div style="color: brown">
+            Pitanje: <p:inputText value="#{anagram.reci.pitanje}"></p:inputText><br/>
+            Odgovor: <p:inputText value="#{anagram.reci.odgovor}"></p:inputText><br/>
+            </div>
+            <p:commandButton value="DODAJ ANAGRAM" action="#{anagram.dodajAna()}"></p:commandButton>
+        </h:form>
+    </h:body>
+</html>
+

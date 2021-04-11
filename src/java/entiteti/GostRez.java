@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entiteti;
+
+/**
+ *
+ * @author Djole
+ */
+public class GostRez {
+    
+    private String username;
+    
+    private Long bodovi;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Long getBodovi() {
+        return bodovi;
+    }
+
+    public void setBodovi(Long bodovi) {
+        this.bodovi = bodovi;
+    }
+
+    
+    
+
+    
+    
+    
+}
